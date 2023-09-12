@@ -1,0 +1,5 @@
+These files are needed to run the model in Blender. To locate n number of vesicles randomly distributed inside the convex hull. It saved the location 
+of the vesicles in the XX_seed_XXXX. To run the model with a specific set the geometry for that set should be used (so change the set). 
+The position of the vesicle is then read with read_ves_pos.py
+Sept 12, 2023
+GCG

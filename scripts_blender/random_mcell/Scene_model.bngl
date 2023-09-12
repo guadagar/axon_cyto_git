@@ -1,0 +1,10 @@
+# WARNING: This is an automatically generated file and will be overwritten
+#          by CellBlender on the next model export.
+
+
+begin molecule types
+    a
+end molecule types
+
+begin reaction rules
+end reaction rules
