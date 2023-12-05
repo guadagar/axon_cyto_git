@@ -2,12 +2,19 @@ import bpy
 import numpy as np
 import pickle
 from scipy.spatial import Delaunay
+import re
 
-'''this script calculates the delaunay mehs for a group of vertices. For the veritices connected to each, I compute
-the distance, and calculate the average
+'''This script calculates the Delaunay mesh for a group of vertices. For the vertices connected to each, I compute
+the distance, and calculate the average. The output is pickle file per bouton with all the averaged distances for each vesicle.
 GCG
 11.30.22
 '''
+#select all the clouds of vesicles
+objs = bpy.context.scene.objects
+my_pat = re.compile('.*_ssvr$')
+my_obj = [obj for obj in objs if my_pat.match(obj.name)!=None]
+for i in my_obj:
+    i.select=  True
 
 if bpy.context.selected_objects != []:
     for obj in bpy.context.selected_objects:

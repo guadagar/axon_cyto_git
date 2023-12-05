@@ -4,8 +4,10 @@ import pickle
 from scipy.spatial import Delaunay
 import re
 
-'''this script calculates the distance from the vesicles to the convex hull (to the vesicles in the outer layer). GCG
-08.31.23
+'''This script calculates the distance from the center of the cloud to the mito. The output is a python file per bouton
+with the distances.
+GCG
+12.05.23
 '''
 
 objs = bpy.context.scene.objects
@@ -17,7 +19,6 @@ for i in my_obj:
 
 if bpy.context.selected_objects != []:
     for obj in bpy.context.selected_objects:
-        #print(obj.name)
         n = len(obj.data.vertices)
         verts = np.zeros((n,3))
         obj_name = obj.name
@@ -73,7 +74,6 @@ if bpy.context.selected_objects != []:
             out[1] = np.median(dmin)
 
             the_filename = obj_name
-
             with open(the_filename, 'wb') as f:#
                 pickle.dump(out, f)
         except:
