@@ -2,13 +2,22 @@ import bpy
 import numpy as np
 import pickle
 from scipy.spatial import Delaunay, Voronoi,ConvexHull,Delaunay,voronoi_plot_2d
+import re
 
-
-'''This script generates the convex hull for a set of vertices. The intersection with mitos in the bouton is considered. The meshes are also triangulated to calculate the volumes.
+'''This script generates the convex hull for a set of vertices. The intersection with mitos and the axons are considered.
+The meshes are also triangulated to calculate the volumes.
 GCG
 06.02.22
 '''
 
+#select all the clouds of vesicles
+objs = bpy.context.scene.objects
+my_pat = re.compile('.*_ssvr_ra$')
+my_obj = [obj for obj in objs if my_pat.match(obj.name)!=None]
+for i in my_obj:
+    i.select=  True
+
+#I loop over all clouds
 if bpy.context.selected_objects != []: # ssvr all
     for obj in bpy.context.selected_objects:
 
@@ -57,7 +66,7 @@ if bpy.context.selected_objects != []: # ssvr all
             bpy.context.object.modifiers["Boolean"].solver = 'CARVE'
             bpy.ops.object.modifier_apply(apply_as = 'DATA', modifier = 'Boolean')
 
-        #     # triangulate the meshe to calculate vol
+        #   # triangulate the meshe to calculate vol
             bpy.context.scene.objects.active = myobject
             myobject.select = True
             bpy.ops.object.editmode_toggle()
@@ -65,8 +74,6 @@ if bpy.context.selected_objects != []: # ssvr all
             bpy.ops.mesh.quads_convert_to_tris(quad_method='BEAUTY',ngon_method='BEAUTY')
             bpy.ops.mesh.select_all(action='TOGGLE')
             bpy.ops.object.editmode_toggle()
-        #
-        #
         except:
             print('no mito')
 
@@ -81,7 +88,7 @@ if bpy.context.selected_objects != []: # ssvr all
         bpy.context.object.modifiers["Boolean"].solver = 'CARVE'
         bpy.ops.object.modifier_apply(apply_as = 'DATA', modifier = 'Boolean')
 
-        #     # triangulate the meshe to calculate vol
+        #triangulate the meshe to calculate vol
         bpy.context.scene.objects.active = myobject
         myobject.select = True
         bpy.ops.object.editmode_toggle()
