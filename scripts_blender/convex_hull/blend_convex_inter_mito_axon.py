@@ -12,7 +12,7 @@ GCG
 
 #select all the clouds of vesicles
 objs = bpy.context.scene.objects
-my_pat = re.compile('.*_ssvr_ra$')
+my_pat = re.compile('.*_ssvr$')
 my_obj = [obj for obj in objs if my_pat.match(obj.name)!=None]
 for i in my_obj:
     i.select=  True
@@ -56,9 +56,9 @@ if bpy.context.selected_objects != []: # ssvr all
         bpy.ops.object.modifier_add(type='BOOLEAN')
         #     #boolean operation with the mitos
         try:
-            #mito_name = obj_name.split('_')[0] + str('_mito1')
+            #mito_name = obj_name.split('_')[0] + str('mito1')
             #print(obj_name, mito_name)
-            #Fw-XR mito different name
+            #Fw-XR mito different name CHECK
             mito_name = obj_name.split('_')[0] + str('_mito1')
             #print(obj_name, mito_name)
             bpy.context.object.modifiers["Boolean"].operation = 'DIFFERENCE'
