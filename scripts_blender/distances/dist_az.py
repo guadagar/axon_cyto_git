@@ -3,9 +3,10 @@ import numpy as np
 import pickle
 import cellblender 
 
-'''This file calculates the distance from each vesicle to the az (the minimun distance). I used a list with the active zones
-in case the terminal is a MSB - it plots the values
+'''This file calculates the distance from each vesicle to the az (the minimum distance). I used a list with the active zones
+in case the terminal is a MSB (in this case it computes both, but then saves the minimum distance).
 02-02-22
+GCG
 '''
 
 #This is a list with the azs for each bouton
