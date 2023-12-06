@@ -4,13 +4,15 @@ import pickle
 from scipy.spatial import Delaunay
 import re
 
-'''this script calculates the distance from the vesicles to the convex hull (to the vesicles in the outer layer). GCG
+'''This script calculates the distance from the vesicles to the convex hull (to the vesicles in the outer layer).
+The output it a python file with all the distances (with the name of the cloud of vesicles). It searches for the
+Convex Hull, without intersections (_ssvr_vert_hull_alone).
+GCG
 08.31.23
 '''
 
 objs = bpy.context.scene.objects
 my_pat = re.compile('.*_ssvr$')
-#my_pat = re.compile('.*_ssvr_vert_hull$')
 my_obj = [obj for obj in objs if my_pat.match(obj.name)!=None]
 for i in my_obj:
     i.select=  True
