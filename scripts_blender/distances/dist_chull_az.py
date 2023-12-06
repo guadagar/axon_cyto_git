@@ -3,8 +3,8 @@ import numpy as np
 import pickle
 import cellblender
 
-'''This file calculates the distance from each vesicle to the az (the minimun distance). I used a list with the active zones
-in case the terminal is a MSB - it plots the values
+'''This file calculates the distance from the vesicles that form the Convex Hull (without intersection) to the az. I used a list with the active zones in case the terminal is a MSB. The output is a pickle file
+GCG
 02-02-22
 '''
 

@@ -5,7 +5,7 @@ from scipy.spatial import Delaunay
 import re
 
 '''This script calculates the distance from the vesicles to the convex hull (to the vesicles in the outer layer).
-The output it a python file with all the distances (with the name of the cloud of vesicles). It searches for the
+The output it a pickle file with all the distances (with the name of the cloud of vesicles). It searches for the
 Convex Hull, without intersections (_ssvr_vert_hull_alone).
 GCG
 08.31.23
