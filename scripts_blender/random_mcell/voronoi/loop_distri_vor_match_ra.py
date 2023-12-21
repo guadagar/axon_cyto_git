@@ -101,11 +101,6 @@ for filename in glob.glob(os.path.join(folder_path,'*.txt')):
             f.write('\t')
             f.write(str(skew(avor)))
             f.write('\n')
-
-            #name_match.append(name)
-            #vor_match.append(np.mean(avor))
-            #vol_match.append(vol[j])
-            #nr_ves_match.append(ves_nr[j])
         else:
             print('no esta',name, vor_final)
 
