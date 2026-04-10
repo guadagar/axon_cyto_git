@@ -7,7 +7,7 @@ from scipy.stats import variation,normaltest,shapiro
 import csv
 
 
-'''Loop over the distances to get the media & sd of the distribution
+'''I go over all the distances to get the media & sd of the distribution
 12.1.22
 GCG
 '''
@@ -25,7 +25,7 @@ for filename in glob.glob(os.path.join(folder_path,'*ssvr')):
     x = filename.split('/')
     di = pickle.load(open(filename,'rb'))
 
-#--------final usage ----------
+#--------save the data----
     f.write(x[3].split('_')[0])
     f.write('\t')
     f.write(str(np.median(di)))
