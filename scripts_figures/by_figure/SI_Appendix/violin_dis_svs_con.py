@@ -39,14 +39,10 @@ for i,j in enumerate(data['final_med_mean_dis']):
 axs = sns.violinplot(data=c, x="Mito", y="final_med_mean_dis", hue="msb",order=['No','Yes'],
                      split=True, inner="quartile", linewidth=1,cut = 0,
                      palette={"n": "#224FDF", "y": "b"},saturation=0.75,ax =axs)
-#palette=sns.color_palette(party_colors.values())
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=9)
-#axs.set_yticklabels([])
 axs.set_xlabel('')
 axs.set_ylabel(r'D$\rm_{Neigh}$ ($\mu$m)',fontsize=9,labelpad=0.3)
-#axs.set_ylabel('')
 plt.legend([],[], frameon=False)
 plt.ylim(0,0.1)
 

@@ -22,7 +22,7 @@ params = {'axes.labelsize': 6,
            'xtick.labelsize': 6,
            'ytick.labelsize': 6,
             'figure.figsize': (1.7,1.3)}
-            #'figure.figsize': (6.4, 6)}
+
 mpl.rcParams.update(params)
 
 data = pd.read_csv('../../../../latest_results/data/all_data_together/all_data_last.csv')

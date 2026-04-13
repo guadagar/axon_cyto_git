@@ -30,11 +30,8 @@ axs = sns.violinplot(data=data, x="Mito", y="final_chull_mvv_ax", hue="Condition
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75,ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=9)
-#axs.set_yticklabels([])
 axs.set_xlabel('')
-#axs.set_ylabel('')
 
 axs.set_ylabel(r'AVol$\rm_{C}$ ($\mu m^3$)',fontsize=8,labelpad=0.3)
 

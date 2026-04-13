@@ -81,9 +81,8 @@ for i in labels:
         labels_let.append('purple')
 
 d['labels'] = labels_let
-#print(d)
 
-#plt.scatter(d['den_ves'],d['final_med_mean_dis'],c=labels_let,edgecolor="k",linewidths=0.4,s=5)
+
 plt.scatter(d['den_ves'],d['final_med_mean_dis'],c=d['labels'],edgecolor="k",linewidths=0.4,s=5)
 
 axs.set_ylabel(r'Dis Neigh SVs ($\mu m$)',fontsize=10,labelpad=0.01)
@@ -103,9 +102,5 @@ plt.legend((circ1, circ2), ("Potentiated", "Stable"), numpoints=1,fontsize=6, lo
 ltp = d.loc[(d['labels'] == 'purple')]# & (data['med_ass_ves_vol_final_ax'] > 0 )]# & (data['pval_d_ves_ol'] <0.05)]
 c = d.loc[(d['labels'] == 'orange')]# &  (data['med_ass_ves_vol_final_ax'] > 0 )]# & (data['pval_d_ves_ol'] <0.05)]
 
-#a = 'loc_den'
-#x = 5
-#print('LTP-C-M',np.round(ltp[a].median(),decimals=x),np.round(c[a].median(),decimals=x),stats.mannwhitneyu(ltp[a],c[a])[1])
-#print('LTP-NM-M',np.round(ltp[a].median(),decimals=x),np.round(c[a].median(),decimals=x),stats.mannwhitneyu(ltp[a],c[a])[1])
 
 plt.show()

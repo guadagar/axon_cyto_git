@@ -19,10 +19,7 @@ params = {'axes.labelsize': 6,
 mpl.rcParams.update(params)
 #
 
-#%------ Figure 1b -----------
-#sns.set_theme(style="whitegrid", palette="bright")
 fig, axs = plt.subplots(figsize=(1.8, 1.3))
-#fig.subplots_adjust(right=0.99, left = 0.3, bottom =0.25, top = 0.87)
 fig.subplots_adjust(right=0.95, left = 0.25, bottom =0.25, top = 0.87)
 
 io = '../../../../latest_results/data/all_data_together/electrophysiology.xlsx'
@@ -33,18 +30,15 @@ data['avg%LTP'] = data[['JB023 LTP %', 'JB024 LTP %']].mean(axis=1)
 data['err%control'] = data[['JB023 Control %', 'JB024 Control %']].std(axis=1)/np.sqrt(2)
 data['err%LTP'] = data[['JB023 LTP %', 'JB024 LTP %']].std(axis=1)/np.sqrt(2)
 
-
 plt.errorbar(data['Time (min)'], data['avg%control'],yerr = data['err%control'], fmt='.', color='b',markersize=1,markeredgewidth=0.1,elinewidth=0.3,label = 'Control')
 plt.errorbar(data['Time (min)'], y = data['avg%LTP'], yerr = data['err%LTP'] , fmt='.', color='r',markersize=1,markeredgewidth=0.1,elinewidth=0.3,label = 'LTP')
 
 for spine in axs.spines.values():
     spine.set_linewidth(0.5)  # Set the thickness to 0.5
 
-#plt.plot(data['Time (min)'],data['JB023 LTP %'],'. r')
-#plt.plot(data['Time (min)'],data['avg%LTP'],'. r')
 plt.ylim(0,350)
 plt.xlim(-40,125)
-#print(data)
+
 plt.legend(frameon = False, loc='upper right')
 plt.ylabel(r'% fEPSP Baseline')
 axs.set_xticks([-50,0,40,80,120])
@@ -53,7 +47,6 @@ axs.spines['right'].set_visible(False)
 axs.set_xlabel(r'Time (min)',fontsize=6,labelpad=0.3)
 
 plt.savefig('/Users/guadagar/Documents/trabajo/mito_project/axon_cytoplasm/figures/new_5_2025/baseline.png', dpi = 600)
-
 
 io = '../../../../latest_results/data/all_data_together/electrophysiology.xlsx'
 

@@ -31,9 +31,8 @@ axs = sns.violinplot(data=m, x="Mito", y="mito_vol", hue="Condition",order=['No'
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75,ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
+
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=9)
-#axs.set_yticklabels([])
 axs.set_xlabel('')
 axs.set_ylabel(r'Total Mito Vol ($\mu m^3$)',fontsize=9,labelpad=0.3)
 
@@ -42,6 +41,5 @@ plt.ylim(-0.03,0.15)
 
 plt.tick_params(axis='both', which='major', labelsize=9,pad=0.3)
 #plt.savefig('../../../../../figures/v2/figures/new/final/final_final/another_final/ves_cloud_vol_mvv_ax.png',dpi =600)
-
 
 plt.show()

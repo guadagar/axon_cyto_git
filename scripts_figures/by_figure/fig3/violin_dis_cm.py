@@ -28,18 +28,12 @@ axs = sns.violinplot(data=data, x="Mito", y="dis_ves_cm_f", hue="Condition",orde
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75,ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=9)
-#axs.set_yticklabels([])
-#axs.set_xlabel('')
 axs.set_ylabel(r'D$\rm_{CC}$ ($\mu$m)',fontsize=9,labelpad=0.3)
-#axs.set_ylabel('')
 plt.legend([],[], frameon=False)
 
 axs.tick_params(axis='both', which='major', labelsize=9,pad=0.3)
 axs.yaxis.offsetText.set_fontsize(9)
-
-#axs.get_yaxis().set_tick_params(pad=0.2)
 
 plt.savefig('/Users/guadagar/Documents/trabajo/mito_project/axon_cytoplasm/figures/new_5_2025/violin_median_disp_cloud.png',dpi =600)
 

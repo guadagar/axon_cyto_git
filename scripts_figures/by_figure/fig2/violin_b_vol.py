@@ -29,11 +29,8 @@ axs = sns.violinplot(data=data, x="Mito", y="b_vol", hue="Condition",order=['No'
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75,ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=9)
-#axs.set_yticklabels([])
 axs.set_xlabel('')
-
 axs.set_ylabel(r'Bouton Vol ($\mu m^3$)',fontsize=9,labelpad=0.3)
 
 plt.legend([],[], frameon=False)
@@ -41,6 +38,5 @@ plt.ylim(-0.03,1.1)
 
 plt.tick_params(axis='both', which='major', labelsize=9,pad=0.3)
 #plt.savefig('../../../../../figures/v2/figures/new/final/final_final/another_final/violin_b_vol.png',dpi =600)
-
 
 plt.show()

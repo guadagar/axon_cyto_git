@@ -51,7 +51,7 @@ w = 5e-5
 bins = np.arange(0, 1.5e-3,w)
 
 aov_l = np.array(vor_vol) - fh_ves_vol
-#aov_l1 = np.array(vor_vol1)
+
 aov_l3 = np.array(vor_vol3) - fh_ves_vol
 
 fig, ax = plt.subplots(figsize=(1.5, 1.1))
@@ -61,10 +61,10 @@ sns.histplot(data = aov_l,stat='probability', kde=True,line_kws={'lw': 1}, bins=
 
 sns.histplot(data = aov_l3,stat='probability', kde=True,line_kws={'lw': 1},bins= bins, color ='skyblue', label ='Control RD')
 
-#print(stats.mannwhitneyu(aov_l,aov_l3)[1])
+
 formatter = ScalarFormatter(useMathText=True)
 formatter.set_scientific(True)
-#ax.xaxis.set_major_formatter(formatter)
+
 formatter.set_powerlimits((0,0))
 ax.xaxis.set_major_formatter(formatter)
 ax.set_xticks([0,0.5e-3,1e-3])

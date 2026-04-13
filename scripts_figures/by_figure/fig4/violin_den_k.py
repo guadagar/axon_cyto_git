@@ -33,17 +33,12 @@ axs = sns.violinplot(data=data, x="Mito", y="den", hue="Condition",order=['No','
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75,ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=8)
-#axs.set_yticklabels([])
 axs.set_xlabel('')
-#axs.set_ylabel(r'Ves Cloud Vol ($\mu m^3$)',fontsize=9,labelpad=0.3)
-#axs.set_ylabel('')
 axs.set_ylabel(r'SV Den$\rm_{C}$ (#/$\mu m^3$)',fontsize=8,labelpad=0.3)
 axs.set_ylim([0,2.5e4])
 plt.legend([],[], frameon=False)
-#plt.ylim(-0.03,1)
-#plt.title('JB023',fontsize=9, pad =0.6)
+
 formatter = ScalarFormatter(useMathText=True)
 formatter.set_scientific(True)
 formatter.set_powerlimits((-1,1))

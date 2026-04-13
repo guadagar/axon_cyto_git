@@ -19,8 +19,7 @@ params = {'axes.labelsize': 6,
            'ytick.labelsize': 6,
             'figure.figsize': (1.8,1.3)}
 mpl.rcParams.update(params)
-#
-#%------ Figure 1a -----------
+
 sns.set_theme(style="whitegrid", palette="bright")
 
 data = pd.read_csv('../../../../latest_results/data/all_data_together/all_data_last.csv')
@@ -35,13 +34,11 @@ axs = sns.violinplot(data=data1, x="Mito", y="med_ass_ves_vol_final_im", hue="Co
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75, ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=9)
 axs.set_ylabel(r'AVol$\rm_{SV}$ ($\mu m^3$)',fontsize=8,labelpad=0.3)
 
 plt.legend([],[], frameon=False)
 plt.ylim(0,0.0006)
-#plt.title('JB023',fontsize=9, pad =0.6)
 formatter = ScalarFormatter(useMathText=True)
 formatter.set_scientific(True)
 formatter.set_powerlimits((-1,1))

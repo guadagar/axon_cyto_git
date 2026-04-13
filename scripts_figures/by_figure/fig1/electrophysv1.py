@@ -18,11 +18,7 @@ params = {'axes.labelsize': 6,
             'figure.figsize': (1.8,1.3)}
 mpl.rcParams.update(params)
 #
-
-#%------ Figure 1b -----------
-#sns.set_theme(style="whitegrid", palette="bright")
 fig, axs = plt.subplots(figsize=(4,2.3))
-#fig.subplots_adjust(right=0.99, left = 0.3, bottom =0.25, top = 0.87)
 fig.subplots_adjust(right=0.95, left = 0.25, bottom =0.25, top = 0.87)
 
 io = '../../../../latest_results/data/all_data_together/electrophysiology.xlsx'
@@ -69,7 +65,6 @@ plt.ylim(-0.04,0.02)
 
 fig, axs = plt.subplots(figsize=(0.4, 0.4))
 fig.subplots_adjust(right=0.99, left = 0.05, bottom =0.15, top = 0.87)
-#fig.subplots_adjust(right=0.99, left = 0.1, bottom =0.15, top = 0.87)
 
 plt.plot(data1['Time (msec)'],data1['JB023-stim1-LTP Baseline'],'k',linewidth=0.1)
 plt.plot(data1['Time (msec)'],data1['JB023-stim1-LTP post-TBS'],'r',linewidth=0.1)
@@ -91,7 +86,7 @@ axs.spines['right'].set_visible(False)
 plt.xlim(0,25)
 plt.ylim(-0.04,0.02)
 for spine in axs.spines.values():
-    spine.set_linewidth(0.2)  # Set the thickness to 0.5
+    spine.set_linewidth(0.2)
 
 plt.savefig('/Users/guadagar/Documents/trabajo/mito_project/axon_cytoplasm/figures/new_5_2025/edgesv1.png', dpi = 1500)
 

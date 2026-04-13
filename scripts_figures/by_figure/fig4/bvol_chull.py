@@ -73,10 +73,8 @@ b4 = slopelm
 x4 = l_m[a]
 plt.plot(x4, a4*(x4**b4),color='#CB1D25',lw=1,zorder=5)
 
-#plt.ylabel('Clu-associated Vol ($\mu m^3$)',fontsize=6,labelpad=0.3)
 plt.ylabel(r'SV Vol$\rm_{C}$ ($\mu m^3$)',fontsize=8,labelpad=0.001)
 plt.xlabel('Bouton Vol ($\mu m^3$)',fontsize=8,labelpad=0.001)
-#axs.yaxis.set_label_coords(-0.25, .38)
 
 yText3 = r'R$^2$ = %.2f ' %(np.round(r_valuem**2,decimals=2))
 yText4 = r'R$^2$ = %.2f ' %(np.round(r_valuelm**2,decimals=2))
@@ -85,8 +83,6 @@ plt.text(0.03,0.55, yText1, fontsize=6,color='#224FDF') #control no mito
 plt.text(0.03,0.35, yText3, fontsize=6,color='navy') #control mito
 plt.text(0.03,0.21, yText2, fontsize=6,color='salmon')  #ltp no mito
 plt.text(0.03,0.13, yText4, fontsize=6,color='#CB1D25')#mito ltp
-
-#plt.legend(loc = 'lower left', ncol=2,prop={'size': 5}, labelspacing=0.1,borderaxespad=0.1,handletextpad=0.1, handlelength=1)
 
 plt.ylim(0.005,1)
 #plt.savefig('/Users/guadagar/Documents/trabajo/mito_project/axon_cytoplasm/figures/new_5_2025/chull_vs_b_vol.png',dpi =600)

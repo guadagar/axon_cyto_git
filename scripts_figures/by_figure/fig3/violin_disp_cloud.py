@@ -27,10 +27,7 @@ axs = sns.violinplot(data=data, x="Mito", y="disp_cm", hue="Condition",order=['N
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75,ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=9)
-#axs.set_yticklabels([])
-#axs.set_xlabel('')
 axs.set_ylabel(r'$\sigma_{xyz}$ ($\mu$m)',fontsize=9,labelpad=0.3)
 #axs.set_ylabel('')
 plt.legend([],[], frameon=False)

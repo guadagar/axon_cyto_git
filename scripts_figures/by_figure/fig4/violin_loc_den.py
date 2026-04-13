@@ -34,7 +34,6 @@ axs = sns.violinplot(data=data1, x="Mito", y="den", hue="Condition",order=['No',
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75, ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticklabels(['- Mito', '+ Mito'],fontsize=9)
 axs.set_ylim([0,2.5e4])
 axs.set_ylabel(r'SV Den$\rm_i$ ($\mu m^{-3}$)',fontsize=8,labelpad=0.3)

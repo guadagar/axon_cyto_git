@@ -11,7 +11,6 @@ This script generates fig 2 panel h
 GCG
 '''
 
-
 params = {'axes.labelsize': 6,
            'axes.titlesize': 6,
           'legend.fontsize': 6,
@@ -21,7 +20,6 @@ params = {'axes.labelsize': 6,
 mpl.rcParams.update(params)
 
 data = pd.read_csv('../../../../latest_results/data/all_data_together/all_data_last.csv')
-
 
 c_nm = data.loc[ (data['Condition'] == 'Control') & (data['Mito']=='No')]
 ltp_nm = data.loc[(data['Condition'] =='LTP') & (data['Mito']=='No')]
@@ -35,7 +33,6 @@ plt.scatter(c_nm['b_vol'],c_nm['mean_ves_vol'],color = '#224FDF',marker='.',s = 
 slope, intercept, r_value, p_value, std_err = stats.linregress(np.log(ltp_nm['b_vol']),np.log(ltp_nm['mean_ves_vol']))
 slopec, interceptc, r_valuec, p_valuec, std_errc = stats.linregress(np.log(c_nm['b_vol']),np.log(c_nm['mean_ves_vol']))
 print('ltp',p_value,'c',p_valuec)
-#plt.legend(loc = 'lower right')
 
 a = np.exp(intercept)
 b = slope
@@ -58,7 +55,6 @@ plt.text(0.029,0.15, yText1, fontsize=7,color='#224FDF')
 plt.text(0.029,0.09, yText2, fontsize=7,color='#CB1D25')
 plt.xscale('log')
 plt.yscale('log')
-#plt.tick_params( labelsize=9,pad=0.3)
 
 plt.savefig('/Users/guadagar/Documents/trabajo/mito_project/axon_cytoplasm/figures/new_5_2025/bvol_ves_vol_nm.png',dpi =600)
 

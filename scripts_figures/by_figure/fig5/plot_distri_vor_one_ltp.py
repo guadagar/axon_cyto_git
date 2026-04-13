@@ -28,7 +28,6 @@ mpl.rcParams.update(params)
 vor_vol = []
 name = 'd01c14ax04'
 filename = '../../../../latest_results/latest_blend_11_22/voronoi_vol/fw/fw_vor_con/'+name+'_ssvr.txt'
-#ves_vol_fw = 0.00004768875 #um3 no mito
 ves_vol_fw = 0.00004768875 #um3
 
 p = open(filename,'r')
@@ -56,14 +55,9 @@ bins = np.arange(0, 1.5e-3,w)
 
 aov_l = np.array(vor_vol) - ves_vol_fw
 aov_l3 = np.array(vor_vol3) - ves_vol_fw
-#print(stats.mannwhitneyu(aov_l,aov_l3)[1])
 
-#print(np.median(ov_l),np.median(ov_c))\\
 fig, ax = plt.subplots(figsize=(1.5, 1.1))
 fig.subplots_adjust(right=0.92, left = 0.25, bottom =0.3, top = 0.98)
-
-#hist, bin_edges = np.histogram((aov_l),bins)
-#ax.bar(bin_edges[:-1], hist/len(hist), width = w, color = 'b', label ='CTRL',alpha =0.5)
 
 sns.histplot(data = aov_l,stat='probability', kde=True,line_kws={'lw': 1}, bins= bins, color ='r', label = 'LTP')
 

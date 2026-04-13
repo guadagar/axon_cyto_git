@@ -18,7 +18,6 @@ params = {'axes.labelsize': 6,
             'figure.figsize': (1.8,1.3)}
 mpl.rcParams.update(params)
 
-#%---- -----------
 sns.set_theme(style="whitegrid", palette="bright")
 fig, axs = plt.subplots(figsize=(1.6, 1.3))
 fig.subplots_adjust(right=0.97, left = 0.33, bottom =0.15, top = 0.8)
@@ -29,10 +28,8 @@ axs = sns.violinplot(data=data, x="Mito", y="nr_ves_b", hue="Condition",order=['
                split=True, inner="quartile", linewidth=1,cut = 0,
 			            		palette={"Control": "b", "LTP": "r"},saturation=0.75,ax =axs)
 sns.despine(left=True, bottom=True)
-#plt.grid(True,color='0.95')
 axs.set_xticks([-0.05,1.05])
 axs.set_xticklabels(['-Mito', '+Mito'],fontsize=6)
-#axs.set_yticklabels([])
 axs.set_xlabel('')
 axs.set_ylabel(r'# SVs',fontsize=9,labelpad=0.3)
 

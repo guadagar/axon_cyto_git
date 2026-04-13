@@ -11,7 +11,6 @@ This script generates fig 2 panel h
 GCG
 '''
 
-
 params = {'axes.labelsize': 6,
            'axes.titlesize': 6,
           'legend.fontsize': 6,
@@ -35,7 +34,6 @@ plt.scatter(c_m['b_vol'],c_m['mean_ves_vol'],color = '#224FDF',marker='.',s = 10
 slope, intercept, r_value, p_value, std_err = stats.linregress(np.log(ltp_m['b_vol']),np.log(ltp_m['mean_ves_vol']))
 slopec, interceptc, r_valuec, p_valuec, std_errc = stats.linregress(np.log(c_m['b_vol']),np.log(c_m['mean_ves_vol']))
 print('ltp',p_value,'c',p_valuec)
-#plt.legend(loc = 'lower right')
 
 a = np.exp(intercept)
 b = slope
@@ -59,7 +57,6 @@ plt.text(0.075,0.09, yText2, fontsize=7,color='#CB1D25')
 
 plt.xscale('log')
 plt.yscale('log')
-#plt.tick_params( labelsize=9,pad=0.3)
 
 plt.savefig('/Users/guadagar/Documents/trabajo/mito_project/axon_cytoplasm/figures/new_5_2025/bvol_ves_vol_m.png',dpi =600)
 

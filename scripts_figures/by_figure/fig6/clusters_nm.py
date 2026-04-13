@@ -37,11 +37,11 @@ dim = 5
 n = len (d['den_ves'])
 X = np.zeros((n, dim))
 
-var1 = np.log(d['den_ves'])  # d['den_ves'] #
-var2 = np.log(d['final_med_mean_dis'])  # d['final_med_mean_dis'] #
-var3 = np.log(d['loc_den'])  # d['med_ass_ves_vol_final_ax']#np.log(d['med_ass_ves_vol_final_ax'])
-var4 = np.log(d['b_vol'])  # d['med_ass_ves_vol_final_ax']#np.log(d['med_ass_ves_vol_final_ax'])
-var5 = np.log(d['disp_cm'])  # d['med_ass_ves_vol_final_ax']#np.log(d['med_ass_ves_vol_final_ax'])
+var1 = np.log(d['den_ves'])
+var2 = np.log(d['final_med_mean_dis'])
+var3 = np.log(d['loc_den'])
+var4 = np.log(d['b_vol'])
+var5 = np.log(d['disp_cm'])
 
 for idx, (den, dis, vor,bsa, disp) in enumerate(zip(var1, var2, var3,var4,var5)):
     X[idx, 0] = ((den - np.median(var1)) / np.std(var1))
@@ -54,7 +54,7 @@ pca = decomposition.PCA(n_components=dim)
 pca.fit(X)
 xt = pca.transform(X)
 
-principalDf = pd.DataFrame(data = xt, columns = ['PC1','PC2','PC3','PC4','PC5'])#,'PC6'])
+principalDf = pd.DataFrame(data = xt, columns = ['PC1','PC2','PC3','PC4','PC5'])
 principalDf_red = pd.DataFrame(data = xt[:,0:2], columns = ['PC1','PC2'])
 
 print('PC components',pca.components_)
@@ -73,8 +73,6 @@ labels = kmeans.labels_
  #   pickle.dump(labels, f)
 
 labels = pickle.load(open('./labels_nm','rb'))
-
-#fig.subplots_adjust(right=0.95, left = 0.26, bottom =0.25, top = 0.93)
 
 fig, axs = plt.subplots(figsize=(1.7, 1.3))
 fig.subplots_adjust(right=0.97, left = 0.25, bottom =0.23, top = 0.98)
@@ -99,8 +97,6 @@ for i in labels_m:
 
 dm['labels'] = labels_letm
 
-#print(d)
-#plt.scatter(d['den_ves'],d['final_med_mean_dis'],c=labels_let,edgecolor="k",linewidths=0.4,s=5)
 plt.scatter(d['den_ves'],d['final_med_mean_dis'],c=d['labels'],edgecolor="gray",linewidths=0.2,s=3,zorder=10)
 plt.scatter(dm['den_ves'],dm['final_med_mean_dis'],c=dm['labels'],edgecolor="gray",linewidths=0.2,s=3,zorder=10)
 

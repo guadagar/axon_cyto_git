@@ -24,7 +24,7 @@ mpl.rcParams.update(params)
 
 data = pd.read_csv('../../../../latest_results/data/all_data_together/all_data_last.csv')
 
-data['den'] =data['nr_ves'] / data['final_chull_mvv_ax'] #packing density
+data['den'] =data['nr_ves'] / data['final_chull_mvv_ax']
 data['pack'] =data['mean_ves_vol'] / data['final_chull_mvv_ax'] #packing density
 data['den_loc'] =  1 / data['med_ass_ves_vol_final_ax'] #data['nr_ves_b'] / data['final_chull_ax']
 
@@ -62,13 +62,13 @@ ae = np.exp(intercept)
 b = slope
 x = c_nm[a]
 plt.plot(x, ae*(x**b),color='#224FDF',lw=1)
-#plt.plot(x, ae*(x**b),color='b')
+
 
 a1 = np.exp(interceptl)
 b1 = slopel
 x1 = l_nm[a]
 plt.plot(x1, a1*(x1**b1),color='salmon',lw=1)
-#plt.plot(x1, a1*(x1**b1),color='r')
+
 
 yText1 = r'$R^2$ = %.3f,' %(np.round(r_valuel**2,decimals=3))
 yText2 = r'$R^2$ = %.3f,' %(np.round(r_value**2,decimals=3))
@@ -92,11 +92,9 @@ axs.set_ylabel(r'SV Den$\rm_{i}$ ($\mu m^{-3}$)',fontsize=8,labelpad=0.01)
 axs.set_xlabel(r'Bouton Vol ($\mu m^3$)',fontsize=8,labelpad=0.01)
 
 axs.yaxis.set_label_coords(-.21, .4)
-#axs.set_xlabel(r'Clu-associated Vol ($\mu m^3$)',fontsize=6,labelpad=0.01)
 
 yText3 = r'R$^2$ = %.3f' %(np.round(r_valuelm**2,decimals=3))
 yText4 = r'R$^2$ = %.3f' %(np.round(r_valuem**2,decimals=3))
-#print('m',r_valuelm**2,r_valuem**2)
 
 plt.text(0.025,3.4e4, yText2, fontsize=6,color='#224FDF')
 plt.text(0.2,3.4e4, yText4, fontsize=6,color='navy')
@@ -107,7 +105,7 @@ plt.ylim(500, 5.3e4)
 plt.xlim(2e-2,1)
 
 plt.legend(loc = 'lower left',mode ='expand', ncol=2, frameon = False,prop={'size': 5}, labelspacing=0.1,borderaxespad=0.1,handletextpad=0.1, handlelength=1)
-#axs.set_ylim(0, 250)
+
 plt.savefig('/Users/guadagar/Documents/trabajo/mito_project/axon_cytoplasm/figures/new_5_2025/locden_vs_b_vol.pdf')
 
 plt.show()

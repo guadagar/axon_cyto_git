@@ -28,10 +28,7 @@ df_fh = sheet_2_df['FHLTD']
 df_fw = sheet_2_df['FWNGV']
 df_fp = sheet_2_df['FPNCT']
 
-#df_merged = pd.concat([df_fp,df_x],ignore_index = True, sort = False)
 df_merged = pd.concat([df_fh,df_fw],ignore_index = True, sort = False)
-
-#df_merged = pd.concat([df_fh,df_fp,df_fw,df_x],ignore_index = True, sort = False)
 
 ltp_m = df_merged.loc[(df_merged['Condition'] == 'LTP')  & (df_merged['mito?'] == 'y')]
 c_m = df_merged.loc[(df_merged['Condition'] == 'Control')  & (df_merged['mito?'] == 'y')]
@@ -55,8 +52,6 @@ axs.set_xticklabels(['-Mito', '+Mito'],fontsize=6)
 axs.set_yticklabels([])
 axs.set_xlabel('')
 axs.set_ylabel(r'',fontsize=9,labelpad=0.3)
-
-#axs.set_ylabel(r'Radius ($\mu m$)',fontsize=9,labelpad=0.3)
 
 plt.legend([],[], frameon=False)
 plt.ylim(1.2e-2,4e-2)

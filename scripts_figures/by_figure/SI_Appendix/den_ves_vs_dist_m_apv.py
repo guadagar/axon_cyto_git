@@ -27,7 +27,6 @@ data_apv = pd.read_csv('../../../../latest_results/data/all_data_together/all_da
 
 data['mito_rel'] =data['mito_vol']/data['b_vol']
 data['den_ves'] = (data['nr_ves_b'])/data['final_chull_mvv_ax']
-#data['ves_rel'] =data['final_chull_mvv_ax']/data['b_vol']
 data['ves_rel'] = (data['b_vol']-data['mito_vol']-data['final_chull_ax'])/data['b_vol']
 
 
@@ -55,18 +54,14 @@ plt.scatter(c_apv[var],c_apv[var1],color='darkcyan',marker='o',s=3, label= 'Cont
 slope, intercept, r_valuem, p_value, std_err = stats.linregress(np.log(ltp[var]),np.log(ltp[var1]))
 slopec, interceptc, r_valuecm, p_valuec, std_errc = stats.linregress(np.log(c[var]),np.log(c[var1]))
 
-#print(r_value,r_valuec)
 
 a = np.exp(intercept)
 b = slope
 x = ltp[var]
 
-#plt.plot(x, a*(x**b),color='r',zorder=5)
-
 a1 = np.exp(interceptc)
 b1 = slopec
 x1 = c[var]
-#plt.plot(x1, a1*(x1**b1),color='b',zorder=5)
 
 slopenm, interceptnm, r_valuenm, p_value, std_err = stats.linregress(np.log(ltp_apv[var]),np.log(ltp_apv[var1]))
 slopecnm, interceptcnm, r_valuecnm, p_valuec, std_errc = stats.linregress(np.log(c_apv[var]),np.log(c_apv[var1]))
@@ -97,7 +92,6 @@ plt.yscale('log')
 plt.ylim(0.01,0.25) #med dis
 plt.xlim(8e2,1.4e4) # std dis
 
-#print(data_apv)
 #plt.savefig('/Users/guadagar/Documents/trabajo/mito_project/axon_cytoplasm/figures/new_5_2025/den_vs_dis_all_apv.pdf',dpi =600)
 ltp_apv = data_apv.loc[(data_apv['Condition'] == 'LTP') & (data_apv['final_med_mean_dis']>0) & (data_apv['APV']=='Yes')  & (data_apv['Mito']=='Yes') ]# &  (data['med_ass_ves_vol_final_ax'] > 0)]
 c_apv = data_apv.loc[(data_apv['Condition'] == 'Control') & (data_apv['final_med_mean_dis']>0)  & (data_apv['APV'])  & (data_apv['Mito']=='Yes')]

@@ -69,12 +69,7 @@ centroids_n = kmeans.cluster_centers_
 
 labels = kmeans.labels_
 
-#with open('./labels_nm', 'wb') as f:
- #   pickle.dump(labels, f)
-
 labels = pickle.load(open('./labels_nm','rb'))
-
-#fig.subplots_adjust(right=0.95, left = 0.26, bottom =0.25, top = 0.93)
 
 fig, axs = plt.subplots(figsize=(1.7, 1.3))
 fig.subplots_adjust(right=0.97, left = 0.25, bottom =0.23, top = 0.98)
@@ -99,8 +94,6 @@ for i in labels_m:
 
 dm['labels'] = labels_letm
 
-#print(d)
-#plt.scatter(d['den_ves'],d['final_med_mean_dis'],c=labels_let,edgecolor="k",linewidths=0.4,s=5)
 plt.scatter(d['den_ves'],d['final_med_mean_dis'],c=d['labels'],edgecolor="gray",linewidths=0.2,s=3,zorder=10)
 plt.scatter(dm['den_ves'],dm['final_med_mean_dis'],c=dm['labels'],edgecolor="gray",linewidths=0.2,s=3,zorder=10)
 
@@ -109,9 +102,6 @@ d_o = d.loc[(d['labels'] == 'orange')] #LTP/Potentiated -M
 
 d_y = dm.loc[(dm['labels'] == 'yellow')] #LTP/Potentiated +M
 d_g = dm.loc[(dm['labels'] == 'green')] #CONTROL/Stable +M
-
-#plt.scatter(d_p['den_ves'],d_p['final_med_mean_dis'],color='b',linewidths=0.2,s=8)
-#plt.scatter(d_o['den_ves'],d_o['final_med_mean_dis'],color='b',linewidths=0.2,s=8)
 
 slopecnm, interceptcnm, r_valuecnm, p_valuec, std_errc = stats.linregress(np.log(d_p['den_ves']),np.log(d_p['final_med_mean_dis']))
 slopenm, interceptnm, r_valuenm, p_value, std_err = stats.linregress(np.log(d_o['den_ves']),np.log(d_o['final_med_mean_dis']))
@@ -130,8 +120,6 @@ plt.plot(x1, a1*(x1**b1),color='orange',zorder=5)
 
 slopecm, interceptcm, r_valuecm, p_valuecm, std_errcm = stats.linregress(np.log(d_g['den_ves']),np.log(d_g['final_med_mean_dis']))
 slopem, interceptm, r_valuem, p_valuem, std_errm = stats.linregress(np.log(d_y['den_ves']),np.log(d_y['final_med_mean_dis']))
-
-#print(r_value,r_valuec)
 
 a = np.exp(interceptcm)
 b = slopecm

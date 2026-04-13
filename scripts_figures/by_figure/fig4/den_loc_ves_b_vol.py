@@ -11,7 +11,6 @@ This script generates fig 4 panel k
 GCG
 '''
 
-
 params = {'axes.labelsize': 6,
            'axes.titlesize': 6,
           'legend.fontsize': 6,
@@ -19,7 +18,6 @@ params = {'axes.labelsize': 6,
            'ytick.labelsize': 6,
             'figure.figsize': (1.613,1.319)}
 mpl.rcParams.update(params)
-#
 
 data = pd.read_csv('../../../../latest_results/data/all_data_together/all_data.csv')
 
@@ -61,7 +59,6 @@ ae = np.exp(intercept)
 b = slope
 x = c_nm[a]
 plt.plot(x, ae*(x**b),color='#224FDF',lw=1)
-#plt.plot(x, ae*(x**b),color='b')
 
 a1 = np.exp(interceptl)
 b1 = slopel
@@ -91,7 +88,6 @@ axs.set_xlabel(r'SV Vol$\rm_{C}$ ($\mu m^3$)',fontsize=8,labelpad=0.01)
 
 yText3 = r'R$^2$ = %.3f' %(np.round(r_valuelm**2,decimals=3))
 yText4 = r'R$^2$ = %.3f' %(np.round(r_valuem**2,decimals=3))
-#print('m',r_valuelm**2,r_valuem**2)
 
 plt.text(0.005,3.4e4, yText2, fontsize=6,color='#224FDF')
 plt.text(0.08,3.4e4, yText4, fontsize=6,color='navy')

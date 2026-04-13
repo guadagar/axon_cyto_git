@@ -65,8 +65,6 @@ plt.plot(x1, a1*(x1**b1),color='b',zorder=5)
 slopenm, interceptnm, r_valuenm, p_value, std_err = stats.linregress(np.log(ltp_nm[var]),np.log(ltp_nm[var1]))
 slopecnm, interceptcnm, r_valuecnm, p_valuec, std_errc = stats.linregress(np.log(c_nm[var]),np.log(c_nm[var1]))
 
-#print(r_value,r_valuec)
-
 a = np.exp(interceptnm)
 b = slopenm
 x = ltp_nm[var]
