@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="dis_az_v2.png">
+</p>
+
 # Transition of the presynaptic vesicle cluster from a compact to dispersed organization during long-term potentiation
 [DOI:]()
 
