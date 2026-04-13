@@ -6,7 +6,7 @@ from scipy import stats
 import pandas as pd
 
 '''
-This script is used to calculate statistics between different animals 
+This script is used to calculate statistics between different animalst 
 GCG
 '''
 
