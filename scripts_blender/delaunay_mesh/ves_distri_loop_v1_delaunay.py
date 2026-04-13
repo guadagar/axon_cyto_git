@@ -4,8 +4,8 @@ import pickle
 from scipy.spatial import Delaunay
 import re
 
-'''This script calculates the Delaunay mesh for a cluster of synaptic vesicles (SVs). For the connected SVs, I compute
-the distance, and calculate the average. The output is pickle file per bouton with all the averaged distances for each SV.
+'''This script calculates the Delaunay triangulation for a cluster of synaptic vesicles (SVs). For the connected SVs, I compute
+the distance, and calculate the average. The output is a pickle file per bouton with all the averaged distances for each SV.
 GCG
 11.30.22
 '''
