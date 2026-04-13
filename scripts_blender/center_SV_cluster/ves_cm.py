@@ -3,12 +3,12 @@ import numpy as np
 import pickle
 from scipy.spatial import Delaunay
 
-'''this script calculates the delaunay mehs for a group of vertices. For the veritices connected to each, I compute
-the distance, and calculate the average
+'''this script calculates the center of each SV cluster and calculates the dispersion from each SV to the center
 GCG
 11.30.22
 '''
 
+#select all the SV clusters
 objs = bpy.context.scene.objects
 my_pat = re.compile('.*_ssvr$')
 #my_pat = re.compile('.*_ssvr_vert_hull$')
@@ -32,7 +32,7 @@ if bpy.context.selected_objects != []:
         def dist(x1,y1,z1,x2,y2,z2):
             d = np.sqrt((x1-x2)**2+(y1-y2)**2+(z1-z2)**2)
             return d
-
+        #center of the SV custer
         cm_verts = np.zeros((3,1))
         cm_verts[0] = np.mean(verts[:,0])
         cm_verts[1] = np.mean(verts[:,1])

@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import cellblender
 
-'''This file calculates the distance from each vesicle to the az (the minimum distance). I used a list with the active zones
+'''This file calculates the distance from each SV to the az (the minimum distance). I used a list with the active zones
 in case the terminal is a MSB (in this case it computes both, but then saves the minimum distance).
 The output is a python file (per bouton) with all the distances.
 02-02-22
@@ -24,7 +24,7 @@ for i in azs:
     ax_name = 'ax'+ax_nr #axon name
     #print(obj)
     nr_az = len(i)
-    #the name of the cloud of vesicles
+    #the name of the SV cluster
     name = i[0] + str('_ssvr')
     bpy.context.scene.objects.active = bpy.data.objects[name]
     obj_n = bpy.context.scene.objects.active    #select the vesicles
@@ -47,7 +47,7 @@ for i in azs:
     nr_az_indx = 0
     #print(i,obj_n,ax_name,flat_reg)
 
-    for j in i: #loopeo in the azs
+    for j in i: #loop through the azs
         if j in flat_reg:
             bpy.context.scene.objects.active = bpy.data.objects[ax_name]
             obj = bpy.context.scene.objects.active
@@ -60,7 +60,7 @@ for i in azs:
 
             n_az = len(selectedVerts)
             verts_az = np.zeros((n_az,3))
-            print(n_az)
+            #print(n_az)
             for k,v in enumerate(selectedVerts):
                 verts_az[k,0] = v.co[0]
                 verts_az[k,1] = v.co[1]

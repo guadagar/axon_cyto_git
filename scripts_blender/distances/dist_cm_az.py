@@ -3,12 +3,12 @@ import numpy as np
 import pickle
 import cellblender
 
-'''This file calculates the distance from center of the cloud to the AZ. I used a list with the active zones
-in case the terminal is a MSB. The output is a python file per bouton with all the distances (with the name of the cloud).
+'''This file calculates the distance from center of the cluster to the AZ. I used a list with the active zones
+in case the terminal is a MSB. The output is a python file per bouton with all the distances (with the name of the SV cluster).
+The output is a pickle with the distance for each SV cluster.
 GCG
 02-02-22
 '''
-
 #This is a list with the azs for each bouton
 the_filename = 'fw_az_lists'
 azs = pickle.load(open(the_filename,'rb'))#
@@ -45,7 +45,7 @@ for i in azs:
     nr_az_indx = 0
     #print(i,obj_n,ax_name,flat_reg)
 
-    for j in i: #loopeo in the azs
+    for j in i: #loop through all the azs
         if j in flat_reg:
             bpy.context.scene.objects.active = bpy.data.objects[ax_name]
             obj = bpy.context.scene.objects.active
@@ -58,7 +58,7 @@ for i in azs:
 
             n_az = len(selectedVerts)
             verts_az = np.zeros((n_az,3))
-            print(n_az)
+            #print(n_az)
             for k,v in enumerate(selectedVerts):
                 verts_az[k,0] = v.co[0]
                 verts_az[k,1] = v.co[1]
