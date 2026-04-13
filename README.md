@@ -15,4 +15,4 @@ All the scripts are written in Python version 3.9.19. The Blender version 2.79. 
 
 Please cite the following paper:
 
-[Garcia, G. C., Bartol, T. M., Kirk, L. M., Badala, P., Harris, K. M., and Sejnowski, T. J. (2026). Transition of the presynaptic vesicle cluster from a compact to dispersed organization during long-term potentiation. PNAS](https://doi.org/10.1002/cne.25254)
+[Garcia G.C., Bartol T.M., Kirk L.M., Badala P., Harris K.M., and Sejnowski T.J. (2026). Transition of the presynaptic vesicle cluster from a compact to dispersed organization during long-term potentiation. PNAS](https://doi.org/10.1002/cne.25254)
