@@ -6,15 +6,14 @@ import os,glob
 from scipy.stats import variation
 import csv
 
-'''New code that loops over the distances and generate text files with the minimum distance to the active zone
-I consider all the active zones present and for each vesicle I get the minimum distance
+'''This script goes over all the distances to the AZ for each cluster of SVs and generate a text file with the median distance.
+I consider all the active zones present at a given bouton and for each vesicle I get the minimum distance
 02.01.22
 GCG
 '''
-
-
+#with all the distances
 folder_path = './dis_az_latest/fp/'
-f = open('./dis_az_latest/fp_az_dis_20.txt','w')
+f = open('./dis_az_latest/fp_az_dis.txt','w')
 #g = open('fh_az_dis_nmito_n.txt','w')
 
 for filename in glob.glob(os.path.join(folder_path,'*_az_dis')):
