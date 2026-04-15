@@ -3,8 +3,8 @@ import numpy as np
 import pickle
 import re
 
-
 '''
+This script triangulates the objects in the my_chull list. Objects have to be triangulated to calculate the volumes.
 GCG
 12.21.21
 '''

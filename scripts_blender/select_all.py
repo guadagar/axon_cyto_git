@@ -1,6 +1,11 @@
 import bpy
 import re
 
+'''
+This script selects all the objects in your Blender scene
+GCG
+'''
+
 objs = bpy.context.scene.objects
 my_pat = re.compile('.*_ssvr_ra$')
 #my_pat = re.compile('.*_ssvr_vert_hull$')
