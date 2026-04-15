@@ -3,13 +3,12 @@ import numpy as np
 import pickle
 from scipy.spatial import Delaunay
 
-'''this script calculates the delaunay mehs for a group of vertices. For the veritices connected to each, I compute
-the distance, and calculate the average
+'''
+This script calculates the number of SVs forming the convex hull for each bouton and saves the name of the bouton and the number of SVs in that form the convex hull. 
 GCG
 11.30.22
 '''
 
-#my_pat = re.compile('.*_ssvr$')
 my_pat = re.compile('.*_ssvr_vert_hull_alone$')
 my_obj = [obj for obj in objs if my_pat.match(obj.name)!=None]
 for i in my_obj:

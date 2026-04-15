@@ -1,5 +1,9 @@
-These files are needed to run the model in Blender. To locate n number of vesicles randomly distributed inside the convex hull. It saved the location 
-of the vesicles in the XX_seed_XXXX. To run the model with a specific set the geometry for that set should be used (so change the set). 
-The position of the vesicle is then read with read_ves_pos.py
+For each bouton, SVs were uniformly distributed inside the SV cluster. For this, the modeling tool MCell was used.
+These files are needed to run the model. The files named Scene_geometry_xx.py contain information about the objects in the the Blender scene (xx here refers to the series name).
+Once run, the location of the SVs is saved in the folder xx_seed_#. To run the model with a specific set the geometry for that set should be used (so change the set).
+The position of the SVs is then read with read_ves_pos.py and SVs are added in those positions.
+
 Sept 12, 2023
 GCG
+
+

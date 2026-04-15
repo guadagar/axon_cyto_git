@@ -5,6 +5,9 @@ import subprocess as sp
 import numpy as np
 import re
 
+'''
+This script reads the position of the uniformly distributed SVs created with MCell and creates a new SV cluster in Blender with the same name as the original SV cluser + *_ssvr_ra
+'''
 
 #dir = os.path.dirname(os.path.abspath(__file__))
 

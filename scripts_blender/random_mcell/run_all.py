@@ -22,7 +22,7 @@ python_path ='/Applications/Blender-2.93-CellBlender/blender.app/Contents/Resour
 run_file = 'Scene_model.py'
 tdir = './'
 
-#I select the name of the cloud and the number of vesicles inside the cloud
+#I select the name of the SV cluster and the SV number inside the cluster
 for name_cloud, nr_ves in zip(fw['name'], fw['nr_ves_in']):
     #I pass these parameters to mcell, and run it
     name = str(name_cloud) + '_ssvr'

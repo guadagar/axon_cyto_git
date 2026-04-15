@@ -1,5 +1,4 @@
-# This file contains hooks to override default MCell4 model
-# code behavior for models generated from CellBlender
+
 import sys
 import os
 import shared
