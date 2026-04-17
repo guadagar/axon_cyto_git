@@ -1,7 +1,7 @@
 For each bouton, SVs were uniformly distributed inside the SV cluster. For this, the modeling tool MCell was used.
 These files are needed to run the model. The files named Scene_geometry_xx.py contain information about the objects in the the Blender scene (xx here refers to the series name).
-To run the model for a specific series the geometry for that set should be used (so change the name: rename Scene_geometry_fh.py to Scene_geometry.py). Once run, the location of the SVs is saved in the folder xx_seed_#.
-The position of the SVs is then read with read_ves_pos.py and SVs are added in those positions, generating a new object in blender.
+To run the model for a specific serie the geometry for that set should be used (so change the name: rename Scene_geometry_fh.py to Scene_geometry.py). Once run, the location of the SVs is saved in the folder xx_seed_#.
+The position of the SVs is then read with read_ves_pos.py and SVs are added in those positions, generating a new object in the blender scene. All the blend files are allocated in a separate repository.
 
 To run the MCell model, simply type 'python run_all.py' in a terminal.
 

@@ -21,7 +21,7 @@ mpl.rcParams.update(params)
 
 data = pd.read_csv('../../../../latest_results/data/all_data_together/all_data.csv')
 
-data['den'] =data['nr_ves'] / data['final_chull_mvv_ax'] #packing density
+data['den'] =data['nr_ves_b'] / data['final_chull_mvv_ax'] #packing density
 data['pack'] =data['mean_ves_vol'] / data['final_chull_mvv_ax'] #packing density
 data['den_loc'] =  1 / data['med_ass_ves_vol_final_ax'] #data['nr_ves_b'] / data['final_chull_ax']
 
