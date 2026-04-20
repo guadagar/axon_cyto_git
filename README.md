@@ -7,7 +7,7 @@ This repository is currently under development.
 # Transition of the presynaptic vesicle cluster from a compact to dispersed organization during long-term potentiation
 [DOI:]()
 
-Welcome to the repository for the manuscript titled "Transition of the presynaptic vesicle cluster from a compact to dispersed organization during long-term potentiation". This repository contains all the code created for this publication, for the analysis of the 3D reconstructions, biophysical simulations and figures in the paper. Additional materials, such as electron microscopy images, 2D traces, and 3D reconstructions in Blender, are available [here](). 
+Welcome to the repository for the manuscript titled "Transition of the presynaptic vesicle cluster from a compact to dispersed organization during long-term potentiation". This repository contains all the code created for this publication, for the analysis of the 3D reconstructions, biophysical simulations, and figures in the paper. Additional materials, such as electron microscopy images, 2D traces, and 3D reconstructions in Blender, are available [here](). 
 
 The `/data/` folder contains a table of all measurements taken from the 3D reconstructions. In the `/scripts_blender/` folder, you will find all the scripts created for analyzing the meshes. You can find the code used to generate the figures in the `/scripts_figures/` folder. Additional analysis can be found in the  `/scripts_analysis/` folder. Finally, the code used to run the biophysical simulations is located in the `/mcell_simulations/`  folder.
 
